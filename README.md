@@ -47,8 +47,14 @@ You can use the **rhacs-install.yaml** as example, please change the credentials
 oc login -u admin https://yourcluster:6443
 ```
 
-### 2.4 Running the playbook
+### 2.4 Installing RHACS cluster and deploy Demo Apps
 
 ```bash
 ansible-playbook rhacs-install.yaml
+```
+
+### Optional - Only install Demo Apps
+
+```bash
+ansible-playbook rhacs-demo.yaml
 ```

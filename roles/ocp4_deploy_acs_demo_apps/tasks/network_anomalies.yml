@@ -5,7 +5,7 @@
     url: "https://{{ f_stackrox_central_addr }}/v1/deployments?query=Deployment:\"{{ item }}\""
     method: GET
     user: admin
-    password: "{{ ocp4_workload_stackrox_central_admin_password }}"
+    password: "{{ stackrox_central_admin_password }}"
     force_basic_auth: true
     validate_certs: no
   register: deployments
@@ -22,7 +22,7 @@
     url: "https://{{ f_stackrox_central_addr }}/v1/deployments/{{ item }}"
     method: GET
     user: admin
-    password: "{{ ocp4_workload_stackrox_central_admin_password }}"
+    password: "{{ stackrox_central_admin_password }}"
     force_basic_auth: true
     validate_certs: no
   register: r_deployment_details
@@ -33,7 +33,7 @@
     url: "https://{{ f_stackrox_central_addr }}/v1/deployments?query=Deployment:\"jump-host\""
     method: GET
     user: admin
-    password: "{{ ocp4_workload_stackrox_central_admin_password }}"
+    password: "{{ stackrox_central_admin_password }}"
     force_basic_auth: true
     validate_certs: no
   register: jumphost
@@ -46,7 +46,7 @@
     body: "{{ lookup('template', 'templates/network_anomalies/peers.json.j2' ) }}"
     method: PATCH
     user: admin
-    password: "{{ ocp4_workload_stackrox_central_admin_password }}"
+    password: "{{ stackrox_central_admin_password }}"
     body_format: json
     force_basic_auth: true
     validate_certs: no
