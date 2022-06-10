@@ -1,0 +1,16 @@
+---
+
+- name: Installing RHACS Central
+  import_tasks: central.yml
+  when: ACTION == "create" or ACTION == "provision"
+
+- name: Installing RHACS Central
+  import_tasks: sensor.yml
+  when: ACTION == "create" or ACTION == "provision"
+
+- name: Uninstalling RHACS Cluster
+  include_tasks:
+    file: ./uninstall.yml
+    apply:
+      become: "{{ become_override | bool }}"
+  when: ACTION == "destroy" or ACTION == "remove"

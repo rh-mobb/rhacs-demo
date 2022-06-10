@@ -1,0 +1,10 @@
+---
+
+- name: Remove the stackrox workspace
+  kubernetes.core.k8s:
+    name: stackrox
+    api_version: v1
+    kind: Namespace
+    state: absent
+
+# TODO: Remove the RHACS Operator

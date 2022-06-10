@@ -1,0 +1,6 @@
+- hosts: localhost
+  vars:
+    stackrox_central_admin_password: stackrox
+  roles:
+  - ocp4_install_acs
+  - ocp4_deploy_acs_demo_apps
