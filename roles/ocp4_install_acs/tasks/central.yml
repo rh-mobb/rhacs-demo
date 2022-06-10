@@ -98,3 +98,8 @@
   until: result.status == 200
   retries: 15
   delay: 20
+
+- name: Create ACS Console Link
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'acs-console-link.yml.j2') }}"
